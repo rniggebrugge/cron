@@ -1,32 +1,32 @@
-# name: Update RSS Feed
+name: Update RSS Feed
 
-# on:
-#   schedule:
-#     - cron: '* * * * *'  # Run every minute
-#   workflow_dispatch:
+on:
+  schedule:
+    - cron: '0 */5 * * *'  # Run every minute
+  workflow_dispatch:
 
-# jobs:
-#   update_feed:
-#     runs-on: ubuntu-latest
+jobs:
+  update_feed:
+    runs-on: ubuntu-latest
 
-#     steps:
-#     - name: Checkout repository
-#       uses: actions/checkout@v3
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
 
-#     - name: Set up Python
-#       uses: actions/setup-python@v3
-#       with:
-#         python-version: 3.x
+    - name: Set up Python
+      uses: actions/setup-python@v3
+      with:
+        python-version: 3.x
 
-#     - name: Install dependencies
-#       run: |
-#         pip install feedparser requests
+    - name: Install dependencies
+      run: |
+        pip install feedparser requests
 
-#     - name: Run update script
-#       run: |
-#         python update_feed.py
-#         git config --local user.email "action@github.com"
-#         git config --local user.name "GitHub Action"
-#         git add rss_data.json
-#         git commit -m "Update RSS feed"
-#         git push
+    - name: Run update script
+      run: |
+        python update_feed.py
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add rss_data.json
+        git commit -m "Update RSS feed"
+        git push
