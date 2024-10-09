@@ -4,7 +4,7 @@ import requests
 from datetime import datetime
 import os
 
-full_name = os.getenv('FULL_NAME')
+full_name = os.environ['FULL_NAME']
 
 RSS_FEED_URL = 'https://feeds.megaphone.fm/newheights'
 JSON_FILE_PATH = 'rss_data.json' 
