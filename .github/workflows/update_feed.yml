@@ -2,7 +2,7 @@ name: Update RSS Feed
 
 on:
   schedule:
-    - cron: '0 */5 * * *'  # Run every minute
+    - cron: '0 0 1 * *'  # Beginning of month only
   workflow_dispatch:
 
 jobs:
