@@ -2,6 +2,9 @@ import feedparser
 import json
 import requests
 from datetime import datetime
+import os
+
+full_name = os.getenv('FULL_NAME')
 
 RSS_FEED_URL = 'https://feeds.megaphone.fm/newheights'
 JSON_FILE_PATH = 'rss_data.json' 
@@ -13,6 +16,7 @@ def fetch_and_save_feed():
     timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     data_with_timestamp = {
         'timestamp': timestamp,
+        'full_name' : full_name,
         'entries': entries
     }
 
