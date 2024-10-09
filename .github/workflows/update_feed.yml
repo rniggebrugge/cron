@@ -23,6 +23,8 @@ jobs:
         pip install feedparser requests
 
     - name: Run update script
+      env:
+        FULL_NAME: ${{ secrets.FULL_NAME }}
       run: |
         python update_feed.py
         git config --local user.email "action@github.com"
@@ -30,5 +32,3 @@ jobs:
         git add rss_data.json
         git commit -m "Update RSS feed"
         git push
-      env:
-        FULL_NAME: ${{ secrets.FULL_NAME }}
