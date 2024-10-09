@@ -3,7 +3,7 @@ import json
 import requests
 from datetime import datetime
 
-RSS_FEED_URL = 'https://www.eurojust.europa.eu/rss/press-releases.xml'
+RSS_FEED_URL = 'https://feeds.megaphone.fm/newheights'
 JSON_FILE_PATH = 'rss_data.json'
 
 def fetch_and_save_feed():
