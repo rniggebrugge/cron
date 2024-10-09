@@ -25,8 +25,8 @@ jobs:
     - name: Run update script
       run: |
         python update_feed.py
-        git config --local user.email "remco.niggebrugge@gmail.com"
-        git config --local user.name "Remco Niggebrugge"
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
         git add rss_data.json
         git commit -m "Update RSS feed"
         git push
